@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserLayout from "./components/Layout/UserLayout";
+import Home from "./pages/Home";
 // import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<UserLayout />}>
+          <Route index element={<Home />} />
           {/* User Layout */}
         </Route>
         <Route>{/* Admin Layout */}</Route>

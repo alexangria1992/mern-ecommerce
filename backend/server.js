@@ -4,6 +4,8 @@ const dotenv = require("dotenv");
 const app = express();
 const colors = require("colors");
 const connectDB = require("./config/db");
+const userRoutes = require("./routes/userRoutes");
+
 app.use(express.json());
 app.use(cors());
 dotenv.config();
@@ -19,6 +21,8 @@ app.get("/", (req, res) => {
   res.send("WELCOME TO RABBIT API");
 });
 
+// API Routes
+app.use("/api/users", userRoutes);
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`.magenta);
 });
